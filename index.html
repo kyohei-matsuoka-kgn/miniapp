@@ -58,3 +58,301 @@
         #user-name {
             font-size: 14px;
             font-weight: bold;
+        }
+
+        /* コンテナ */
+        .container {
+            padding: 16px;
+            max-width: 600px; /* タブレット対応 */
+            margin: 0 auto;
+        }
+
+        /* カードデザイン */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .card h2 {
+            font-size: 18px;
+            border-left: 4px solid var(--line-green);
+            padding-left: 10px;
+            margin: 0 0 16px 0;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 16px;
+            margin: 20px 0 10px 0;
+            color: #444;
+        }
+
+        h4 {
+            font-size: 15px;
+            color: var(--line-green);
+            margin: 15px 0 5px 0;
+        }
+
+        p, li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* アコーディオンUI (詳細情報の開閉) */
+        .accordion-details {
+            display: none;
+            margin-top: 10px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+        .accordion-btn {
+            background: none;
+            border: 1px solid var(--line-green);
+            color: var(--line-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        /* テーブルスタイル */
+        .table-wrap {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 10px;
+            min-width: 300px;
+        }
+        th, td {
+            border: 1px solid #eee;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #fafafa;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            font-size: 11px;
+            color: var(--gray-text);
+        }
+
+        /* エラー表示 */
+        #liff-error {
+            color: red;
+            padding: 16px;
+            font-size: 12px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>LINE公式アカウント ガイド</h1>
+</header>
+
+<div id="liff-error"></div>
+
+<div id="user-info">
+    <img id="user-avatar" src="" alt="">
+    <div>
+        <div style="font-size:10px; color:#888;">Welcome</div>
+        <div id="user-name">Guest User</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <div class="card">
+        <h2>1. サービス概要とリーチ力</h2>
+        <p>LINEは国内MAU <strong>9,700万人以上</strong>を誇るコミュニケーションアプリです。</p>
+        <ul>
+            <li>日本の人口の約8割をカバー</li>
+            <li>生活インフラとして定着し、高い開封率を実現</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>2. アカウントの種類</h2>
+        <p>用途や審査状況に応じて3つのアカウントタイプがあります。</p>
+        
+        <div class="table-wrap">
+            <table>
+                <tr>
+                    <th>タイプ</th>
+                    <th>バッジ色</th>
+                    <th>特徴</th>
+                </tr>
+                <tr>
+                    <td>プレミアム</td>
+                    <td style="color:#06C755; font-weight:bold;">緑</td>
+                    <td>特に優良なアカウント（審査基準非公開）</td>
+                </tr>
+                <tr>
+                    <td>認証済</td>
+                    <td style="color:#003580; font-weight:bold;">青</td>
+                    <td>所定の審査を通過。検索結果に表示される</td>
+                </tr>
+                <tr>
+                    <td>未認証</td>
+                    <td style="color:#888;">灰</td>
+                    <td>個人・法人問わず誰でも作成可能</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>3. 主要機能の紹介</h2>
+        <p>集客から販促、カスタマーサポートまで幅広い機能を提供します。</p>
+
+        <button class="accordion-btn" onclick="toggleDetails('feature-details')">機能詳細を見る ▼</button>
+        <div id="feature-details" class="accordion-details">
+            <h3>3.1 メッセージ配信</h3>
+            <ul>
+                <li><strong>セグメント配信:</strong> 年齢・性別・地域などで絞り込み</li>
+                <li><strong>ステップ配信:</strong> 友だち追加からの日数に合わせて自動配信</li>
+            </ul>
+
+            <h3>3.2 販促ツール</h3>
+            <ul>
+                <li><strong>クーポン:</strong> 来店促進に使えるデジタルクーポン</li>
+                <li><strong>ショップカード:</strong> LINE上で完結するポイントカード</li>
+                <li><strong>リッチメニュー:</strong> トーク画面下部に固定表示されるメニュー</li>
+            </ul>
+
+            <h3>3.3 顧客対応</h3>
+            <ul>
+                <li><strong>LINEチャット:</strong> 1対1での問い合わせ対応</li>
+                <li><strong>LINEコール:</strong> 無料の音声・ビデオ通話機能</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. 料金プラン</h2>
+        <p>メッセージ配信数に応じた3つのプランから選択可能です。</p>
+        
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>プラン</th>
+                        <th>月額</th>
+                        <th>無料通数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>フリー</td>
+                        <td>0円</td>
+                        <td>200通</td>
+                    </tr>
+                    <tr>
+                        <td>ライト</td>
+                        <td>5,000円</td>
+                        <td>5,000通</td>
+                    </tr>
+                    <tr>
+                        <td>スタンダード</td>
+                        <td>15,000円</td>
+                        <td>30,000通</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:11px; margin-top:8px; color:#888;">※価格は税別です。スタンダードプランのみ追加メッセージ課金があります。</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 LINE Official Account Guide<br>Powered by LIFF</p>
+</footer>
+
+<script>
+    // ▼ ここにご自身のLIFF IDを設定してください ▼
+    const MY_LIFF_ID = "2008894194-g8TzxBZq"; 
+
+    // アコーディオンの開閉処理
+    function toggleDetails(id) {
+        const element = document.getElementById(id);
+        const btn = element.previousElementSibling;
+        if (element.style.display === "block") {
+            element.style.display = "none";
+            btn.textContent = "機能詳細を見る ▼";
+        } else {
+            element.style.display = "block";
+            btn.textContent = "閉じる ▲";
+        }
+    }
+
+    // LIFF初期化処理
+    async function initializeLiff() {
+        try {
+            // LIFF IDが設定されていない場合は処理を中断（開発用）
+            if (MY_LIFF_ID === "YOUR_LIFF_ID_HERE") {
+                console.log("LIFF IDが設定されていません。HTMLファイル内のMY_LIFF_IDを書き換えてください。");
+                return;
+            }
+
+            await liff.init({ liffId: MY_LIFF_ID });
+
+            // LIFFブラウザで開いている、またはログイン済みの場合
+            if (liff.isLoggedIn()) {
+                getUserProfile();
+            } else {
+                // 未ログインの場合の処理（必要に応じて liff.login() を呼ぶ）
+                console.log("Not logged in.");
+            }
+        } catch (error) {
+            console.error("LIFF Initialization failed", error);
+            document.getElementById('liff-error').style.display = 'block';
+            document.getElementById('liff-error').textContent = "LIFF Error: " + error.message;
+        }
+    }
+
+    // ユーザープロフィールの取得例
+    async function getUserProfile() {
+        try {
+            const profile = await liff.getProfile();
+            document.getElementById('user-info').style.display = 'flex';
+            document.getElementById('user-name').textContent = profile.displayName;
+            if(profile.pictureUrl) {
+                document.getElementById('user-avatar').src = profile.pictureUrl;
+            }
+        } catch (error) {
+            console.error("Profile get failed", error);
+        }
+    }
+
+    // ページ読み込み完了時にLIFFを初期化
+    window.onload = function() {
+        initializeLiff();
+    };
+</script>
+
+</body>
+</html>
